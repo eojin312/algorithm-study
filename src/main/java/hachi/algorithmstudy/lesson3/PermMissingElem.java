@@ -21,9 +21,9 @@ import java.util.Arrays;
  */
 public class PermMissingElem {
     public int solution(int[] A) {
-        Arrays.sort(A);
+        Arrays.sort(A); // 오름차순으로 정렬 시켜준다.
         for (int n = 0; n < A.length; n++) {
-            if (n + 1 != A[n]) {
+            if (n + 1 != A[n]) { //N + 1 이 A의 N 번째 값과 다르다면 N + 1 의 값을 리턴한다.
                 return n + 1;
             }
         }
