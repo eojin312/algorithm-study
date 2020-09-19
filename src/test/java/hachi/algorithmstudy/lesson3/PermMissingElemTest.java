@@ -16,9 +16,4 @@ class PermMissingElemTest {
         }
         return A.length + 1;
     }
-
-    @Test
-    void solution() {
-        solution();
-    }
 }

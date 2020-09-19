@@ -41,9 +41,9 @@ class TapeEquilibriumTest {
     @Test
     void solutionTest3() {
         // 위 코드가 O(n^2) 으로 짜여졌다면 이번 코드는 O(n) 으로 짜봤다.
-        int[] A = new int[BIG_SIZE];
+        int[] A = new int[200000000];
 
-        for (int i = 0; i < BIG_SIZE; i++) {
+        for (int i = 0; i < 200000000; i++) {
             A[i] = i;
         }
         TapeEquilibrium tapeEquilibrium = new TapeEquilibrium();
