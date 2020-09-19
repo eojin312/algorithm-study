@@ -31,6 +31,8 @@ import java.util.Arrays;
  * Write an efficient algorithm for the following assumptions:
  * N is an integer within the range [2..100,000];
  * each element of array A is an integer within the range [−1,000..1,000].
+ *
+ * report link : https://app.codility.com/demo/results/trainingVBASWX-ND8/
  */
 public class TapeEquilibrium {
     /**
@@ -64,6 +66,10 @@ public class TapeEquilibrium {
      * @return
      */
     public int solution(int[] A) {
+        int ALength = A.length;
+        if (ALength == 2) {
+            return A[1] - A[0];
+        }
         int N = A.length;
         long total = 0;
         long sumFirstPart = 0;
@@ -84,11 +90,14 @@ public class TapeEquilibrium {
         sumFirstPartArray[2] = 2-1까지 누적합 = sumFirstPartArray[1] + A[1] = A[0] + A[1]
         sumFirstPartArray[3] = 3-1까지 누적합 = sumFirstPartArray[2] + A[2] = A[0] + A[1] + A[3]
          */
-        for (int P = 1; P < N; P++ ) {
+         for (int P = 1; P < N; P++ ) {
+            if (P == 1) {
+                sumFirstPartArray[P-1] = A[0];
+            }
             sumFirstPartArray[P] = sumFirstPartArray[P-1] + A[P];
         }
 
-        for (int P = 1; P < N; P++ ) {
+        for (int P = 0; P < N-1; P++ ) {
             // 두번째파트누적합 = 전체누적합 - 첫번째파트누적합[P];
             // 차 = |첫번째파트누적합[P] - 두번째파트누적합|
             // minDifference = Math.min(minDifference, difference);
