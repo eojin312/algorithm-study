@@ -19,7 +19,7 @@ import java.util.Arrays;
  * the elements of A are all distinct;
  * each element of array A is an integer within the range [1..(N + 1)].
  *
- *
+ * report link = https://app.codility.com/demo/results/trainingFR8D6R-YMG/
  */
 public class PermMissingElem {
     public int solution(int[] A) {
