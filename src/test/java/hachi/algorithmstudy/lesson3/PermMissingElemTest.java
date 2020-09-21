@@ -1,19 +1,17 @@
 package hachi.algorithmstudy.lesson3;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class PermMissingElemTest {
-    public int solution(int[] A) {
-        Arrays.sort(A);
-        for (int i = 0; i < A.length; i++) {
-            if (i + 1 != A[i]) {
-                return i + 1;
-            }
-        }
-        return A.length + 1;
+
+    @Test
+    void solution_기본테스트() {
+        PermMissingElem permMissingElem = new PermMissingElem();
+        int[] A = {2, 3, 1, 5};
+        Assertions.assertEquals(4, permMissingElem.solution(A));
+
+        int[] B = {1000, 1001, 1002, 1005};
+        Assertions.assertEquals(1, permMissingElem.solution(B));
     }
 }
