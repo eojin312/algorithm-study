@@ -1,4 +1,4 @@
-package hachi.algorithmstudy;
+package hachi.algorithmstudy.lesson1;
 
 import hachi.algorithmstudy.lesson1.BinaryGap;
 import org.junit.jupiter.api.Assertions;
