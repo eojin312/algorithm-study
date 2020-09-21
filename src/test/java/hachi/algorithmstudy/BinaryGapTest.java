@@ -1,5 +1,6 @@
 package hachi.algorithmstudy;
 
+import hachi.algorithmstudy.lesson1.BinaryGap;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -28,33 +29,32 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class BinaryGapTest {
 
-    public int solution(int N) {
-        String binaryInteger = Integer.toBinaryString(N);
-        int binaryIntegerLength = binaryInteger.length();
-        int zeroCount = 0;
-        int maxCount = 0;
-        for (int i = 0; i < binaryIntegerLength; i++) {
-            if (binaryInteger.charAt(i) == '1') {
-                maxCount = Math.max(maxCount, zeroCount); // 둘이 비교해서 가장 큰 놈을 maxcount 에 담아준다.
-                zeroCount = 0;
-            } else {
-                zeroCount++;
-            }
-        }
-        return maxCount;
+    @Test
+    void solution_기본테스트() {
+        BinaryGap binaryGap = new BinaryGap();
+        binaryGap.solution(1041);
+        Assertions.assertEquals(5, 5);
     }
 
     @Test
-    void solutionTest() {
-        int expect = solution(200);
-        int acutal = 2;
-        Assertions.assertEquals(expect, acutal);
+    void solution_대용량테스트() {
+        BinaryGap binaryGap = new BinaryGap();
+        int actual = binaryGap.solution(Integer.MAX_VALUE);
+        System.out.println(actual);
     }
 
     @Test
-    void solutionTest2() {
-        int expect = solution(1041);
-        int acutal = 5;
-        Assertions.assertEquals(expect, acutal);
+    void solution_N이_1073741825_일때_테스트() {
+        BinaryGap binaryGap = new BinaryGap();
+        binaryGap.solution(1073741825);
+        Assertions.assertEquals(29, 29);
+    }
+
+    @Test
+    void solution_N이_1610612737_일때_테스트() {
+        BinaryGap binaryGap = new BinaryGap();
+        int actual = binaryGap.solution(1610612737);
+        System.out.println(actual);
+        Assertions.assertEquals(28, 28);
     }
 }
