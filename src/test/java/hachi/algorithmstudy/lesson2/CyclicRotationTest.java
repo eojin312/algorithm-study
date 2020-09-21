@@ -3,28 +3,23 @@ package hachi.algorithmstudy.lesson2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class CyclicRotationTest {
 
-    public int[] solution(int[] A, int K) {
-        int[] result = new int[A.length];
-
-        for (int i = 0; i < A.length; i++) {
-            int remainder = (i + K) % A.length;
-            result[remainder] = A[i];
-        }
-        return result;
-    }
-
     @Test
-    void solution() {
-        int[] A = {1, 2, 3, 4};
-        int[] expected = solution(A, 4);
+    void solution_기본테스트() {
 
-        System.out.println(Arrays.toString(expected));
+        CyclicRotation cyclicRotation = new CyclicRotation();
 
+        int[] A = {3, 8, 9, 7, 6};
+        int[] Aexpected = {9, 7, 6, 3, 8};
+        Assertions.assertArrayEquals(Aexpected, cyclicRotation.solution(A, 3));
+
+        int[] B = {0, 0, 0};
+        int[] Bexpected = {0, 0, 0};
+        Assertions.assertArrayEquals(Bexpected, cyclicRotation.solution(B, 1));
+
+        int[] C = {1, 2, 3, 4};
+        int[] Cexpected = {1, 2, 3, 4};
+        Assertions.assertArrayEquals(Cexpected, cyclicRotation.solution(C, 4));
     }
 }

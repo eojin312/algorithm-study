@@ -24,7 +24,8 @@ package hachi.algorithmstudy.lesson2;
  * N and K are integers within the range [0..100];
  * each element of array A is an integer within the range [−1,000..1,000].
  * In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
- * https://app.codility.com/demo/results/trainingP9N2ZV-UNW/
+ *
+ * report link : https://app.codility.com/demo/results/trainingP9N2ZV-UNW/
  */
 public class CyclicRotation {
     public int[] solution(int[] A, int K) {
