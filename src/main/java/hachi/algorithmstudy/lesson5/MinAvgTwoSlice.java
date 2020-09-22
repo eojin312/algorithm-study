@@ -44,31 +44,55 @@ package hachi.algorithmstudy.lesson5;
  * report link : https://app.codility.com/demo/results/demoV25DUE-9A8/
  */
 public class MinAvgTwoSlice {
+
     public int solution(int[] A) {
-        float minAvg = (A[0] + A[1]) / 2;
+        double minAvg = (A[0] + A[1]) / 2.0;
         int minpos = 0;
-        final int ALength = A.length;
-        for (int i = 0; i < ALength - 2; i++) {
-            float firstTwo = (float)(A[i] + A[i+1])/2;
+
+        for (int i = 2; i < A.length; i++) {
+            double avg = (A[i - 2] + A[i - 1] + A[i]) / 3.0;
+
+            if (avg < minAvg) {
+                minAvg = avg;
+                minpos = i - 2;
+            }
+
+            avg = (A[i - 1] + A[i]) / 2.0;
+
+            if (avg < minAvg) {
+                minAvg = avg;
+                minpos = i - 1;
+            }
+        }
+        return minpos;
+    }
+
+    public int solutionTry01(int[] A) {
+        double minAvg = (A[0] + A[1]) / 2.0;
+        int minpos = 0;
+        final int N = A.length;
+        for (int i = 2; i < N; i++) {
+            double firstTwo = (A[i] + A[i + 1]) / 2.0;
 
             if (firstTwo < minAvg) {
                 minAvg = firstTwo;
                 minpos = i;
             }
 
-            float three = (float)(A[i] + A[i+1] + A[i+2])/3;
+            double three = (A[i] + A[i + 1] + A[i + 2]) / 3.0;
             if (firstTwo < minAvg) {
                 minAvg = three;
                 minpos = i;
             }
 
-            float lastTwo = (float)(A[i + 1] + A[i+2])/2;
+            double lastTwo = (A[i + 1] + A[i + 2]) / 2.0;
 
             if (lastTwo < minAvg) {
                 minAvg = lastTwo;
-                minpos = i + 1;
+                minpos = i - 1;
             }
         }
         return minpos;
     }
 }
+
