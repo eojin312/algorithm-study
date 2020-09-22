@@ -41,7 +41,9 @@ package hachi.algorithmstudy.lesson5;
  * N is an integer within the range [2..100,000];
  * each element of array A is an integer within the range [−10,000..10,000].
  *
- * report link : https://app.codility.com/demo/results/demoV25DUE-9A8/
+ * report link : https://app.codility.com/demo/results/demoV25DUE-9A8/ => 50%
+ *
+ * report link : https://app.codility.com/demo/results/trainingHWVSDC-Z9S/ => 100%
  */
 public class MinAvgTwoSlice {
 
