@@ -23,7 +23,7 @@ public class CountDiv {
     public int solutionTry01(int A, int B, int K) {
         int result = 0;
 
-        //
+
         if (A % K == 0) {
             result++;
         }
