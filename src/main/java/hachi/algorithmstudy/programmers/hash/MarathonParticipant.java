@@ -1,6 +1,9 @@
 package hachi.algorithmstudy.programmers.hash;
 
-import java.util.Arrays;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.*;
 import java.util.stream.IntStream;
 
 /**
@@ -30,14 +33,41 @@ import java.util.stream.IntStream;
  */
 public class MarathonParticipant {
     public String solution(String[] participant, String[] completion) {
-        Arrays.sort(participant);
-        Arrays.sort(completion);
+        Map<String, Integer> map = new HashMap<>();
+        for (String s : participant) {
+            if( map.containsKey(s) ) {
+                int count =  map.get(s);
+                map.put(s, count+1);
+            } else {
+                map.put(s, 1);
+            }
+        }
 
-        return IntStream.range(0, completion.length)
-                .filter(i -> !participant[i].equals(completion[i]))
-                .mapToObj(i -> participant[i])
-                .findAny()
-                .orElse(participant[completion.length]);
+        Set<String> compSet = new HashSet<>();
+        for (String s : completion) {
+            compSet.add(s);
+        }
+
+        for (String s : participant) {
+            if (compSet.contains(s)) {
+                if (map.containsKey(s) && map.get(s) > 1) {
+                    map.put(s, map.get(s)-1);
+                } else {
+                    map.remove(s);
+                }
+                compSet.remove(s);
+            } else {
+                // nothing
+            }
+        }
+        return map.entrySet().iterator().next().getKey();
     }
 
+    @Test
+    void test() {
+        MarathonParticipant marathonParticipant = new MarathonParticipant();
+        String[] participant = new String[]{"mislav", "stanko", "mislav", "ana"};
+        String[] completion = new String[] {"stanko", "ana", "mislav"};
+        Assertions.assertEquals("mislav", marathonParticipant.solution(participant, completion));
+    }
 }
