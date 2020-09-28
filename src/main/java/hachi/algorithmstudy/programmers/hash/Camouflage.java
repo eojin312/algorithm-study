@@ -37,6 +37,16 @@ import java.util.HashMap;
  * 1. crow_mask
  * 2. blue_sunglasses
  * 3. smoky_makeup
+ *
+ *
+ 테스트 1
+ 입력값 〉	[["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]
+ 기댓값 〉	5
+ 실행 결과 〉	테스트를 통과하였습니다.
+ 테스트 2
+ 입력값 〉	[["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]
+ 기댓값 〉	3
+ 실행 결과 〉	테스트를 통과하였습니다.
  */
 public class Camouflage {
     public int solution(String[][] clothes) {
