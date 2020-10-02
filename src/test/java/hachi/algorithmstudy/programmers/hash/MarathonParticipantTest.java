@@ -2,8 +2,7 @@ package hachi.algorithmstudy.programmers.hash;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import hachi.algorithmstudy.programmers.hash.MarathonParticipant;
 
 class MarathonParticipantTest {
 
