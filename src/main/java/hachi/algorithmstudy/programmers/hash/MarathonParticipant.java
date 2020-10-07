@@ -1,9 +1,9 @@
 package hachi.algorithmstudy.programmers.hash;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
@@ -60,13 +60,5 @@ public class MarathonParticipant {
             }
         }
         return map.entrySet().iterator().next().getKey();
-    }
-
-    @Test
-    void test() {
-        MarathonParticipant marathonParticipant = new MarathonParticipant();
-        String[] participant = new String[]{"mislav", "stanko", "mislav", "ana"};
-        String[] completion = new String[] {"stanko", "ana", "mislav"};
-        Assertions.assertEquals("mislav", marathonParticipant.solution(participant, completion));
     }
 }
